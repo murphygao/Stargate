@@ -40,8 +40,7 @@ namespace MessageQueue
         {
             services.ConnectToAiursoftDatabase<MessageQueueDbContext>("MessageQueue",IsDevelopment);
             services.AddMvc();
-            services.AddTransient<IEmailSender, AuthMessageSender>();
-            services.AddTransient<ISmsSender, AuthMessageSender>();
+            services.AddTransient<WebSocketPusher>();
             services.AddTransient<DataCleaner>();
         }
 
@@ -55,7 +54,7 @@ namespace MessageQueue
             app.UseWebSockets();
             app.UseStaticFiles();
             app.UseMvcWithDefaultRoute();
-            cleaner.StartCleanerService().Wait();
+            //cleaner.StartCleanerService().Wait();
             //dbContext.Database.Migrate();
         }
     }

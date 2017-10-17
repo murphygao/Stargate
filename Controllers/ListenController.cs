@@ -23,16 +23,21 @@ namespace MessageQueue.Controllers
     {
         private MessageQueueDbContext _dbContext;
         private IPusher<WebSocket> _pusher;
+        private DataCleaner _cleaner;
 
-        public ListenController(MessageQueueDbContext dbContext)
+        public ListenController(MessageQueueDbContext dbContext,
+            WebSocketPusher pusher,
+            DataCleaner cleaner)
         {
             _dbContext = dbContext;
-            _pusher = new WebSocketPusher();
+            _pusher = pusher;
+            _cleaner = cleaner;
         }
 
         [AiurForceWebSocket]
         public async Task<IActionResult> Channel(ChannelAddressModel model)
         {
+            await _cleaner.StartCleanerService();
             var lastReadTime = DateTime.Now;
             var channel = await _dbContext.Channels.FindAsync(model.Id);
             if (channel.ConnectKey != model.Key)
