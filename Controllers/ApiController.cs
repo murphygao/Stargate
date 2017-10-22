@@ -9,7 +9,7 @@ namespace MessageQueue.Controllers
 {
     [AiurRequireHttps]
     [AiurExceptionHandler]
-    public class ApiController : AiurController
+    public class ApiController : AiuApirController
     {
     }
 }
