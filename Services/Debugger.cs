@@ -1,6 +1,6 @@
-﻿using Aiursoft.Pylon.Models.MessageQueue;
+﻿using Aiursoft.Pylon.Models.Stargate;
 using Aiursoft.Pylon.Services;
-using Aiursoft.Pylon.Services.ToMessageQueueServer;
+using Aiursoft.Pylon.Services.ToStargateServer;
 using MessageQueue.Data;
 using System;
 using System.Collections.Generic;

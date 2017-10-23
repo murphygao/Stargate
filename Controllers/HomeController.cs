@@ -4,14 +4,14 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Aiursoft.Pylon.Models;
-using Aiursoft.Pylon.Services.ToMessageQueueServer;
+using Aiursoft.Pylon.Services.ToStargateServer;
 using Aiursoft.Pylon;
 using MessageQueue.Services;
-using Aiursoft.Pylon.Models.MessageQueue.ListenAddressModels;
+using Aiursoft.Pylon.Models.Stargate.ListenAddressModels;
 using Aiursoft.Pylon.Attributes;
 using MessageQueue.Data;
 using Microsoft.EntityFrameworkCore;
-using Aiursoft.Pylon.Models.MessageQueue;
+using Aiursoft.Pylon.Models.Stargate;
 using Aiursoft.Pylon.Services;
 
 namespace MessageQueue.Controllers
@@ -61,7 +61,7 @@ namespace MessageQueue.Controllers
             var appLocal = await _dbContext.Apps.Include(t => t.Channels).SingleOrDefaultAsync(t => t.Id == testAppId);
             if (appLocal == null)
             {
-                appLocal = new MessageQueueApp
+                appLocal = new StargateApp
                 {
                     Id = testAppId,
                     Channels = new List<Channel>()

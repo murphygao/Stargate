@@ -5,16 +5,16 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Aiursoft.Pylon;
 using Aiursoft.Pylon.Attributes;
-using Aiursoft.Pylon.Models.MessageQueue.ChannelAddressModels;
+using Aiursoft.Pylon.Models.Stargate.ChannelAddressModels;
 using Aiursoft.Pylon.Services.ToAPIServer;
 using MessageQueue.Data;
 using Microsoft.EntityFrameworkCore;
 using MessageQueue.Models;
-using Aiursoft.Pylon.Models.MessageQueue;
-using Aiursoft.Pylon.Models.MessageQueue.ChannelViewModels;
+using Aiursoft.Pylon.Models.Stargate;
+using Aiursoft.Pylon.Models.Stargate.ChannelViewModels;
 using Aiursoft.Pylon.Models;
 using Aiursoft.Pylon.Services;
-using Aiursoft.Pylon.Models.MessageQueue.ListenAddressModels;
+using Aiursoft.Pylon.Models.Stargate.ListenAddressModels;
 
 namespace MessageQueue.Controllers
 {
@@ -34,7 +34,7 @@ namespace MessageQueue.Controllers
             var appLocal = await _dbContext.Apps.SingleOrDefaultAsync(t => t.Id == app.AppId);
             if (appLocal == null)
             {
-                appLocal = new MessageQueueApp
+                appLocal = new StargateApp
                 {
                     Id = app.AppId,
                     Channels = new List<Channel>()
@@ -89,7 +89,7 @@ namespace MessageQueue.Controllers
             var appLocal = await _dbContext.Apps.Include(t => t.Channels).SingleOrDefaultAsync(t => t.Id == app.AppId);
             if (appLocal == null)
             {
-                appLocal = new MessageQueueApp
+                appLocal = new StargateApp
                 {
                     Id = app.AppId,
                     Channels = new List<Channel>()

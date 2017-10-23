@@ -1,4 +1,4 @@
-﻿using Aiursoft.Pylon.Models.MessageQueue;
+﻿using Aiursoft.Pylon.Models.Stargate;
 using System;
 using System.Collections.Generic;
 using System.Linq;

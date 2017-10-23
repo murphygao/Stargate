@@ -1,8 +1,8 @@
 ﻿using Aiursoft.Pylon;
 using Aiursoft.Pylon.Attributes;
 using Aiursoft.Pylon.Models;
-using Aiursoft.Pylon.Models.MessageQueue;
-using Aiursoft.Pylon.Models.MessageQueue.MessageAddressModels;
+using Aiursoft.Pylon.Models.Stargate;
+using Aiursoft.Pylon.Models.Stargate.MessageAddressModels;
 using Aiursoft.Pylon.Services;
 using Aiursoft.Pylon.Services.ToAPIServer;
 using MessageQueue.Data;
@@ -32,7 +32,7 @@ namespace MessageQueue.Controllers
             var appLocal = await _dbContext.Apps.SingleOrDefaultAsync(t => t.Id == app.AppId);
             if (appLocal == null)
             {
-                appLocal = new MessageQueueApp
+                appLocal = new StargateApp
                 {
                     Id = app.AppId,
                     Channels = new List<Channel>()

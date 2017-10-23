@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using MessageQueue.Models;
-using Aiursoft.Pylon.Models.MessageQueue;
+using Aiursoft.Pylon.Models.Stargate;
 
 namespace MessageQueue.Data
 {
@@ -16,7 +16,7 @@ namespace MessageQueue.Data
         }
 
         public DbSet<Channel> Channels { get; set; }
-        public DbSet<MessageQueueApp> Apps { get; set; }
+        public DbSet<StargateApp> Apps { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

@@ -10,10 +10,10 @@ using System.Net.WebSockets;
 using System.Text;
 using System.Threading;
 using Aiursoft.Pylon.Services;
-using Aiursoft.Pylon.Models.MessageQueue;
+using Aiursoft.Pylon.Models.Stargate;
 using MessageQueue.Services;
 using Aiursoft.Pylon.Models;
-using Aiursoft.Pylon.Models.MessageQueue.ListenAddressModels;
+using Aiursoft.Pylon.Models.Stargate.ListenAddressModels;
 
 namespace MessageQueue.Controllers
 {
