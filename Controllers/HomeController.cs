@@ -20,8 +20,8 @@ namespace Aiursoft.Stargate.Controllers
     [AiurExceptionHandler]
     public class HomeController : AiurController
     {
-        private MessageQueueDbContext _dbContext;
-        public HomeController(MessageQueueDbContext dbContext)
+        private StargateDbContext _dbContext;
+        public HomeController(StargateDbContext dbContext)
         {
             this._dbContext = dbContext;
         }
@@ -89,7 +89,7 @@ namespace Aiursoft.Stargate.Controllers
                         ChannelId = newChannel.Id,
                         Content = DateTime.Now + StringOperation.RandomString(10)
                     };
-                    MessageQueueMemory.Messages.Add(message);
+                    StargateMemory.Messages.Add(message);
                     await Task.Delay(10);
                 }
             });

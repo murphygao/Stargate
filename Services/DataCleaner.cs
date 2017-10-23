@@ -8,8 +8,8 @@ namespace Aiursoft.Stargate.Services
 {
     public class DataCleaner
     {
-        public MessageQueueDbContext _dbContext;
-        public DataCleaner(MessageQueueDbContext _dbContext)
+        public StargateDbContext _dbContext;
+        public DataCleaner(StargateDbContext _dbContext)
         {
             this._dbContext = _dbContext;
         }

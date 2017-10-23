@@ -10,7 +10,7 @@ using System;
 
 namespace Aiursoft.Stargate.Migrations
 {
-    [DbContext(typeof(MessageQueueDbContext))]
+    [DbContext(typeof(StargateDbContext))]
     partial class MessageQueueDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

@@ -38,13 +38,13 @@ namespace Aiursoft.Stargate
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.ConnectToAiursoftDatabase<MessageQueueDbContext>("MessageQueue",IsDevelopment);
+            services.ConnectToAiursoftDatabase<StargateDbContext>("MessageQueue",IsDevelopment);
             services.AddMvc();
             services.AddTransient<WebSocketPusher>();
             services.AddTransient<DataCleaner>();
         }
 
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, MessageQueueDbContext dbContext, DataCleaner cleaner)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, StargateDbContext dbContext, DataCleaner cleaner)
         {
             if (env.IsDevelopment())
             {

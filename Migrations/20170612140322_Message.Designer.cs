@@ -7,7 +7,7 @@ using Aiursoft.Stargate.Data;
 
 namespace Aiursoft.Stargate.Migrations
 {
-    [DbContext(typeof(MessageQueueDbContext))]
+    [DbContext(typeof(StargateDbContext))]
     [Migration("20170612140322_Message")]
     partial class Message
     {

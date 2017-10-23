@@ -9,9 +9,9 @@ using Aiursoft.Pylon.Models.Stargate;
 
 namespace Aiursoft.Stargate.Data
 {
-    public class MessageQueueDbContext : DbContext
+    public class StargateDbContext : DbContext
     {
-        public MessageQueueDbContext(DbContextOptions<MessageQueueDbContext> options) : base(options)
+        public StargateDbContext(DbContextOptions<StargateDbContext> options) : base(options)
         {
         }
 

@@ -21,11 +21,11 @@ namespace Aiursoft.Stargate.Controllers
     [AiurExceptionHandler]
     public class ListenController : AiurController
     {
-        private MessageQueueDbContext _dbContext;
+        private StargateDbContext _dbContext;
         private IPusher<WebSocket> _pusher;
         private DataCleaner _cleaner;
 
-        public ListenController(MessageQueueDbContext dbContext,
+        public ListenController(StargateDbContext dbContext,
             WebSocketPusher pusher,
             DataCleaner cleaner)
         {
@@ -54,7 +54,7 @@ namespace Aiursoft.Stargate.Controllers
             {
                 try
                 {
-                    var nextMessages = MessageQueueMemory
+                    var nextMessages = StargateMemory
                         .Messages
                         .Where(t => t.ChannelId == model.Id)
                         .Where(t => t.CreateTime > lastReadTime)

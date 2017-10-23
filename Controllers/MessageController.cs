@@ -19,8 +19,8 @@ namespace Aiursoft.Stargate.Controllers
     [AiurExceptionHandler]
     public class MessageController : AiurController
     {
-        private MessageQueueDbContext _dbContext;
-        public MessageController(MessageQueueDbContext dbContext)
+        private StargateDbContext _dbContext;
+        public MessageController(StargateDbContext dbContext)
         {
             _dbContext = dbContext;
         }
@@ -65,7 +65,7 @@ namespace Aiursoft.Stargate.Controllers
                 ChannelId = channel.Id,
                 Content = model.MessageContent
             };
-            MessageQueueMemory.Messages.Add(message);
+            StargateMemory.Messages.Add(message);
             return Json(new AiurProtocal
             {
                 code = ErrorType.Success,

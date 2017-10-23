@@ -22,8 +22,8 @@ namespace Aiursoft.Stargate.Controllers
     [AiurExceptionHandler]
     public class ChannelController : AiurController
     {
-        private MessageQueueDbContext _dbContext;
-        public ChannelController(MessageQueueDbContext dbContext)
+        private StargateDbContext _dbContext;
+        public ChannelController(StargateDbContext dbContext)
         {
             _dbContext = dbContext;
         }

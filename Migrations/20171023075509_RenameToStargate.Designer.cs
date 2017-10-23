@@ -10,7 +10,7 @@ using System;
 
 namespace Aiursoft.Stargate.Migrations
 {
-    [DbContext(typeof(MessageQueueDbContext))]
+    [DbContext(typeof(StargateDbContext))]
     [Migration("20171023075509_RenameToStargate")]
     partial class RenameToStargate
     {

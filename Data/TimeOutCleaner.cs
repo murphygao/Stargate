@@ -9,11 +9,11 @@ namespace Aiursoft.Stargate.Data
 {
     public static class TimeoutCleaner
     {
-        public static async Task AllClean(MessageQueueDbContext _dbContext)
+        public static async Task AllClean(StargateDbContext _dbContext)
         {
             try
             {
-                MessageQueueMemory.Messages.RemoveAll(t => t.CreateTime < DateTime.Now - new TimeSpan(0, 1, 0));
+                StargateMemory.Messages.RemoveAll(t => t.CreateTime < DateTime.Now - new TimeSpan(0, 1, 0));
                 _dbContext.Channels.RemoveRange(_dbContext.Channels.ToList().Where(t=>!t.IsAlive()));
                 await _dbContext.SaveChangesAsync();
             }

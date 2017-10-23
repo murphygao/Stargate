@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Aiursoft.Stargate.Data
 {
-    public static class MessageQueueMemory
+    public static class StargateMemory
     {
         public static List<Message> Messages { get; set; } = new List<Message>();
     }
