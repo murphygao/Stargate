@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http.Authentication;
 using Microsoft.AspNetCore.Identity;
 
-namespace MessageQueue.Models.ManageViewModels
+namespace Aiursoft.Stargate.Models.ManageViewModels
 {
     public class ManageLoginsViewModel
     {

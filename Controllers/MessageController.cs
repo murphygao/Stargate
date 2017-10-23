@@ -5,7 +5,7 @@ using Aiursoft.Pylon.Models.Stargate;
 using Aiursoft.Pylon.Models.Stargate.MessageAddressModels;
 using Aiursoft.Pylon.Services;
 using Aiursoft.Pylon.Services.ToAPIServer;
-using MessageQueue.Data;
+using Aiursoft.Stargate.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -13,7 +13,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MessageQueue.Controllers
+namespace Aiursoft.Stargate.Controllers
 {
     [AiurRequireHttps]
     [AiurExceptionHandler]

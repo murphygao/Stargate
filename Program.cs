@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 
-namespace MessageQueue
+namespace Aiursoft.Stargate
 {
     public class Program
     {

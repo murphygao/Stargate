@@ -11,9 +11,10 @@ using System;
 namespace Aiursoft.Stargate.Migrations
 {
     [DbContext(typeof(MessageQueueDbContext))]
-    partial class MessageQueueDbContextModelSnapshot : ModelSnapshot
+    [Migration("20171023075509_RenameToStargate")]
+    partial class RenameToStargate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

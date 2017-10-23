@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
-using MessageQueue.Data;
+using Aiursoft.Stargate.Data;
 
-namespace MessageQueue.Migrations
+namespace Aiursoft.Stargate.Migrations
 {
     [DbContext(typeof(MessageQueueDbContext))]
     [Migration("20170612140322_Message")]

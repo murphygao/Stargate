@@ -9,13 +9,13 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using MessageQueue.Data;
-using MessageQueue.Models;
-using MessageQueue.Services;
+using Aiursoft.Stargate.Data;
+using Aiursoft.Stargate.Models;
+using Aiursoft.Stargate.Services;
 using Aiursoft.Pylon;
 using Aiursoft.Pylon.Services;
 
-namespace MessageQueue
+namespace Aiursoft.Stargate
 {
     public class Startup
     {

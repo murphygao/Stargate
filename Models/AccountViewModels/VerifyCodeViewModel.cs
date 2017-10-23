@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MessageQueue.Models.AccountViewModels
+namespace Aiursoft.Stargate.Models.AccountViewModels
 {
     public class VerifyCodeViewModel
     {

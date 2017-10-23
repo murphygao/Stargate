@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace MessageQueue.Migrations
+namespace Aiursoft.Stargate.Migrations
 {
     public partial class Message : Migration
     {

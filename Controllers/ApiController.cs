@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MessageQueue.Controllers
+namespace Aiursoft.Stargate.Controllers
 {
     [AiurRequireHttps]
     [AiurExceptionHandler]

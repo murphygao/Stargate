@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MessageQueue.Models.ManageViewModels
+namespace Aiursoft.Stargate.Models.ManageViewModels
 {
     public class FactorViewModel
     {

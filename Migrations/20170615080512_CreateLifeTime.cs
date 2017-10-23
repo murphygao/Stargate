@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace MessageQueue.Migrations
+namespace Aiursoft.Stargate.Migrations
 {
     public partial class CreateLifeTime : Migration
     {

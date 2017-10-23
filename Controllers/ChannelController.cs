@@ -7,16 +7,16 @@ using Aiursoft.Pylon;
 using Aiursoft.Pylon.Attributes;
 using Aiursoft.Pylon.Models.Stargate.ChannelAddressModels;
 using Aiursoft.Pylon.Services.ToAPIServer;
-using MessageQueue.Data;
+using Aiursoft.Stargate.Data;
 using Microsoft.EntityFrameworkCore;
-using MessageQueue.Models;
+using Aiursoft.Stargate.Models;
 using Aiursoft.Pylon.Models.Stargate;
 using Aiursoft.Pylon.Models.Stargate.ChannelViewModels;
 using Aiursoft.Pylon.Models;
 using Aiursoft.Pylon.Services;
 using Aiursoft.Pylon.Models.Stargate.ListenAddressModels;
 
-namespace MessageQueue.Controllers
+namespace Aiursoft.Stargate.Controllers
 {
     [AiurRequireHttps]
     [AiurExceptionHandler]

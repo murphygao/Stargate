@@ -7,7 +7,7 @@ using System.Linq;
 using System.Net.WebSockets;
 using System.Threading.Tasks;
 
-namespace MessageQueue.Services
+namespace Aiursoft.Stargate.Services
 {
     public class WebSocketPusher : IPusher<WebSocket>
     {

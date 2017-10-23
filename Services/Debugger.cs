@@ -1,13 +1,13 @@
 ﻿using Aiursoft.Pylon.Models.Stargate;
 using Aiursoft.Pylon.Services;
 using Aiursoft.Pylon.Services.ToStargateServer;
-using MessageQueue.Data;
+using Aiursoft.Stargate.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MessageQueue.Services
+namespace Aiursoft.Stargate.Services
 {
     public static class Debugger
     {
