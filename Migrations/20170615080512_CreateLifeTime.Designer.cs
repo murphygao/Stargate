@@ -17,7 +17,7 @@ namespace MessageQueue.Migrations
                 .HasAnnotation("ProductVersion", "1.1.2")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("AiursoftBase.Models.MessageQueue.Channel", b =>
+            modelBuilder.Entity("Aiursoft.Pylon.Models.MessageQueue.Channel", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -39,7 +39,7 @@ namespace MessageQueue.Migrations
                     b.ToTable("Channels");
                 });
 
-            modelBuilder.Entity("AiursoftBase.Models.MessageQueue.MessageQueueApp", b =>
+            modelBuilder.Entity("Aiursoft.Pylon.Models.MessageQueue.MessageQueueApp", b =>
                 {
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd();
@@ -49,9 +49,9 @@ namespace MessageQueue.Migrations
                     b.ToTable("Apps");
                 });
 
-            modelBuilder.Entity("AiursoftBase.Models.MessageQueue.Channel", b =>
+            modelBuilder.Entity("Aiursoft.Pylon.Models.MessageQueue.Channel", b =>
                 {
-                    b.HasOne("AiursoftBase.Models.MessageQueue.MessageQueueApp", "App")
+                    b.HasOne("Aiursoft.Pylon.Models.MessageQueue.MessageQueueApp", "App")
                         .WithMany("Channels")
                         .HasForeignKey("AppId");
                 });

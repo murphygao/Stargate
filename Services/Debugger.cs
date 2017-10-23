@@ -1,6 +1,6 @@
-﻿using AiursoftBase.Models.MessageQueue;
-using AiursoftBase.Services;
-using AiursoftBase.Services.ToMessageQueueServer;
+﻿using Aiursoft.Pylon.Models.MessageQueue;
+using Aiursoft.Pylon.Services;
+using Aiursoft.Pylon.Services.ToMessageQueueServer;
 using MessageQueue.Data;
 using System;
 using System.Collections.Generic;

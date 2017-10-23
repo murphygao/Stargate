@@ -1,10 +1,10 @@
-﻿using AiursoftBase;
-using AiursoftBase.Attributes;
-using AiursoftBase.Models;
-using AiursoftBase.Models.MessageQueue;
-using AiursoftBase.Models.MessageQueue.MessageAddressModels;
-using AiursoftBase.Services;
-using AiursoftBase.Services.ToAPIServer;
+﻿using Aiursoft.Pylon;
+using Aiursoft.Pylon.Attributes;
+using Aiursoft.Pylon.Models;
+using Aiursoft.Pylon.Models.MessageQueue;
+using Aiursoft.Pylon.Models.MessageQueue.MessageAddressModels;
+using Aiursoft.Pylon.Services;
+using Aiursoft.Pylon.Services.ToAPIServer;
 using MessageQueue.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;

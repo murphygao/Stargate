@@ -12,8 +12,8 @@ using Microsoft.Extensions.Logging;
 using MessageQueue.Data;
 using MessageQueue.Models;
 using MessageQueue.Services;
-using AiursoftBase;
-using AiursoftBase.Services;
+using Aiursoft.Pylon;
+using Aiursoft.Pylon.Services;
 
 namespace MessageQueue
 {

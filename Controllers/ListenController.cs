@@ -3,17 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using AiursoftBase.Attributes;
-using AiursoftBase;
+using Aiursoft.Pylon.Attributes;
+using Aiursoft.Pylon;
 using MessageQueue.Data;
 using System.Net.WebSockets;
 using System.Text;
 using System.Threading;
-using AiursoftBase.Services;
-using AiursoftBase.Models.MessageQueue;
+using Aiursoft.Pylon.Services;
+using Aiursoft.Pylon.Models.MessageQueue;
 using MessageQueue.Services;
-using AiursoftBase.Models;
-using AiursoftBase.Models.MessageQueue.ListenAddressModels;
+using Aiursoft.Pylon.Models;
+using Aiursoft.Pylon.Models.MessageQueue.ListenAddressModels;
 
 namespace MessageQueue.Controllers
 {

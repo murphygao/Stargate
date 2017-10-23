@@ -1,4 +1,4 @@
-﻿@model AiursoftBase.Models.MessageQueue.ListenAddressModels.ChannelAddressModel
+﻿@model Aiursoft.Pylon.Models.MessageQueue.ListenAddressModels.ChannelAddressModel
 @{
     Layout = null;
 }
@@ -9,7 +9,7 @@
 </head>
 <body>
     WebSocket Connection Test - Channel @Model.Id
-    <script src="@AiursoftBase.Values.CdnServerAddress/lib/jquery/dist/jquery.min.js"></script>
+    <script src="@Aiursoft.Pylon.Values.CdnServerAddress/lib/jquery/dist/jquery.min.js"></script>
     <script>
     function GetWSAddress(){
         var ishttps = 'https:' == document.location.protocol ? true: false;

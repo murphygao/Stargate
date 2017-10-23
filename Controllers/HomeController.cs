@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using AiursoftBase.Models;
-using AiursoftBase.Services.ToMessageQueueServer;
-using AiursoftBase;
+using Aiursoft.Pylon.Models;
+using Aiursoft.Pylon.Services.ToMessageQueueServer;
+using Aiursoft.Pylon;
 using MessageQueue.Services;
-using AiursoftBase.Models.MessageQueue.ListenAddressModels;
-using AiursoftBase.Attributes;
+using Aiursoft.Pylon.Models.MessageQueue.ListenAddressModels;
+using Aiursoft.Pylon.Attributes;
 using MessageQueue.Data;
 using Microsoft.EntityFrameworkCore;
-using AiursoftBase.Models.MessageQueue;
-using AiursoftBase.Services;
+using Aiursoft.Pylon.Models.MessageQueue;
+using Aiursoft.Pylon.Services;
 
 namespace MessageQueue.Controllers
 {

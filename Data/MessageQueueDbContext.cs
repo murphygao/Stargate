@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using MessageQueue.Models;
-using AiursoftBase.Models.MessageQueue;
+using Aiursoft.Pylon.Models.MessageQueue;
 
 namespace MessageQueue.Data
 {
