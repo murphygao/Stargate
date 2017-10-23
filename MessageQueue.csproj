@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Version>0.0.4</Version>
     <TargetFramework>netcoreapp2.0</TargetFramework>
-    <AssemblyName>Aiursoft.MessageQueue</AssemblyName>
+    <AssemblyName>MessageQueue</AssemblyName>
     <PackageId>Aiursoft.MessageQueue</PackageId>
     <Company>Aiursoft</Company>
     <Product>AiursoftBWeb</Product>
