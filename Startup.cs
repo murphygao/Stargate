@@ -38,7 +38,7 @@ namespace Aiursoft.Stargate
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.ConnectToAiursoftDatabase<StargateDbContext>("MessageQueue",IsDevelopment);
+            services.ConnectToAiursoftDatabase<StargateDbContext>("Stargate",IsDevelopment);
             services.AddMvc();
             services.AddTransient<WebSocketPusher>();
             services.AddTransient<DataCleaner>();
