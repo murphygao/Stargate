@@ -36,8 +36,8 @@ namespace Aiursoft.Stargate.Controllers
 
         public async Task<IActionResult> IntegratedTest()
         {
-            string testAppId = "29bf5250a6d93d47b6164ac2821d5009";
-            string testAppSecret = "784400c3d9066c5584489497273f867e";
+            string testAppId = "4a4176a8263f025134315e0de4b50378";
+            string testAppSecret = "6d96f5d14e25007f6ff967121ea31c44";
             var token = AppsContainer.AccessToken(testAppId, testAppSecret);
             var result = await ChannelService.CreateChannelAsync(await token(), "Test Channel");
             await Task.Factory.StartNew(async () =>
@@ -54,8 +54,8 @@ namespace Aiursoft.Stargate.Controllers
 
         public async Task<IActionResult> SelfTest()
         {
-            string testAppId = "29bf5250a6d93d47b6164ac2821d5009";
-            string testAppSecret = "784400c3d9066c5584489497273f867e";
+            string testAppId = "4a4176a8263f025134315e0de4b50378";
+            string testAppSecret = "6d96f5d14e25007f6ff967121ea31c44";
             var token = AppsContainer.AccessToken(testAppId, testAppSecret);
             //Ensure app
             var appLocal = await _dbContext.Apps.Include(t => t.Channels).SingleOrDefaultAsync(t => t.Id == testAppId);
