@@ -54,8 +54,6 @@ namespace Aiursoft.Stargate
             app.UseWebSockets();
             app.UseStaticFiles();
             app.UseMvcWithDefaultRoute();
-            //cleaner.StartCleanerService().Wait();
-            //dbContext.Database.Migrate();
         }
     }
 }
