@@ -1,4 +1,4 @@
-# Message Queue
+# Stargate
 
 [![Build Status](https://travis-ci.org/AiursoftWeb/Stargate.svg?branch=master)](https://travis-ci.org/AiursoftWeb/Stargate)
 
