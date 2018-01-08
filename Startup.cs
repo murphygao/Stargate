@@ -32,7 +32,7 @@ namespace Aiursoft.Stargate
             IsDevelopment = env.IsDevelopment();
             if (IsDevelopment)
             {
-                Values.Schema = "http";
+                Values.ForceRequestHttps = false;
             }
         }
 
