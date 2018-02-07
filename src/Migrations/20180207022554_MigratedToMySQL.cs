@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
-using Microsoft.EntityFrameworkCore.Metadata;
+using System;
+using System.Collections.Generic;
 
 namespace Aiursoft.Stargate.Migrations
 {
-    public partial class init : Migration
+    public partial class MigratedToMySQL : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -25,10 +25,12 @@ namespace Aiursoft.Stargate.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     AppId = table.Column<string>(nullable: true),
+                    ConnectKey = table.Column<string>(nullable: true),
                     CreateTime = table.Column<DateTime>(nullable: false),
-                    Description = table.Column<string>(nullable: true)
+                    Description = table.Column<string>(nullable: true),
+                    LifeTime = table.Column<TimeSpan>(nullable: false)
                 },
                 constraints: table =>
                 {
