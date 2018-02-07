@@ -14,6 +14,7 @@ using Aiursoft.Stargate.Models;
 using Aiursoft.Stargate.Services;
 using Aiursoft.Pylon;
 using Aiursoft.Pylon.Services;
+using Microsoft.AspNetCore.HttpOverrides;
 
 namespace Aiursoft.Stargate
 {
@@ -38,7 +39,8 @@ namespace Aiursoft.Stargate
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.ConnectToAiursoftDatabase<StargateDbContext>("Stargate",IsDevelopment);
+            services.AddDbContext<StargateDbContext>(options =>
+                options.UseMySql(Configuration.GetConnectionString("DatabaseConnection")));
             services.AddMvc();
             services.AddTransient<WebSocketPusher>();
             services.AddTransient<DataCleaner>();
@@ -46,6 +48,10 @@ namespace Aiursoft.Stargate
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, StargateDbContext dbContext, DataCleaner cleaner)
         {
+            app.UseForwardedHeaders(new ForwardedHeadersOptions
+            {
+                ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
+            });
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
