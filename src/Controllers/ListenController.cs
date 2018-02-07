@@ -17,7 +17,7 @@ using Aiursoft.Pylon.Models.Stargate.ListenAddressModels;
 
 namespace Aiursoft.Stargate.Controllers
 {
-    [AiurRequireHttps]
+    //[AiurRequireHttps]
     [AiurExceptionHandler]
     public class ListenController : AiurController
     {
