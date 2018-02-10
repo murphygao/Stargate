@@ -11,15 +11,15 @@ using System;
 namespace Aiursoft.Stargate.Migrations
 {
     [DbContext(typeof(StargateDbContext))]
-    [Migration("20180207022554_MigratedToMySQL")]
-    partial class MigratedToMySQL
+    [Migration("20180210102759_MigratedToSQLServer")]
+    partial class MigratedToSQLServer
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
-                .HasAnnotation("ProductVersion", "2.0.1-rtm-125");
+                .HasAnnotation("ProductVersion", "2.0.1-rtm-125")
+                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("Aiursoft.Pylon.Models.Stargate.Channel", b =>
                 {

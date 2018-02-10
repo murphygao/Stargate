@@ -40,7 +40,7 @@ namespace Aiursoft.Stargate
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<StargateDbContext>(options =>
-                options.UseMySql(Configuration.GetConnectionString("DatabaseConnection")));
+                options.UseSqlServer(Configuration.GetConnectionString("DatabaseConnection")));
             services.AddMvc();
             services.AddTransient<WebSocketPusher>();
             services.AddTransient<DataCleaner>();
@@ -48,10 +48,6 @@ namespace Aiursoft.Stargate
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, StargateDbContext dbContext, DataCleaner cleaner)
         {
-            app.UseForwardedHeaders(new ForwardedHeadersOptions
-            {
-                ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
-            });
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

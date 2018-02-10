@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace Aiursoft.Stargate.Migrations
 {
-    public partial class MigratedToMySQL : Migration
+    public partial class MigratedToSQLServer : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -25,7 +25,7 @@ namespace Aiursoft.Stargate.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     AppId = table.Column<string>(nullable: true),
                     ConnectKey = table.Column<string>(nullable: true),
                     CreateTime = table.Column<DateTime>(nullable: false),
