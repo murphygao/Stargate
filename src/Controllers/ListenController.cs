@@ -61,7 +61,7 @@ namespace Aiursoft.Stargate.Controllers
                         .ToList();
                     if (!nextMessages.Any())
                     {
-                        if (sleepTime < 300)
+                        if (sleepTime < 1000)
                             sleepTime += 5;
                         await Task.Delay(sleepTime);
                     }
