@@ -59,7 +59,6 @@ namespace Aiursoft.Stargate.Controllers
                         .Where(t => t.ChannelId == model.Id)
                         .Where(t => t.CreateTime > lastReadTime)
                         .ToList();
-                    Console.WriteLine(DateTime.Now.Millisecond + "Checked!");
                     if (!nextMessages.Any())
                     {
                         if (sleepTime < 300)
