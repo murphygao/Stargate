@@ -73,9 +73,9 @@ namespace Aiursoft.Stargate.Controllers
                         sleepTime = 0;
                     }
                 }
-                catch (InvalidOperationException)
+                catch (InvalidOperationException e)
                 {
-
+                    Console.WriteLine(e.Message);
                 }
             }
             return null;
