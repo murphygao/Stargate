@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -7,10 +6,6 @@ using Aiursoft.Pylon.Attributes;
 using Aiursoft.Pylon;
 using Aiursoft.Stargate.Data;
 using System.Net.WebSockets;
-using System.Text;
-using System.Threading;
-using Aiursoft.Pylon.Services;
-using Aiursoft.Pylon.Models.Stargate;
 using Aiursoft.Stargate.Services;
 using Aiursoft.Pylon.Models;
 using Aiursoft.Pylon.Models.Stargate.ListenAddressModels;

@@ -36,9 +36,7 @@ namespace Aiursoft.Stargate.Controllers
 
         public async Task<IActionResult> IntegratedTest()
         {
-            string testAppId = "4a4176a8263f025134315e0de4b50378";
-            string testAppSecret = "6d96f5d14e25007f6ff967121ea31c44";
-            var token = AppsContainer.AccessToken(testAppId, testAppSecret);
+            var token = AppsContainer.AccessToken();
             var result = await ChannelService.CreateChannelAsync(await token(), "Test Channel");
             await Task.Factory.StartNew(async () =>
             {
@@ -48,56 +46,6 @@ namespace Aiursoft.Stargate.Controllers
             {
                 Id = result.ChannelId,
                 Key = result.ConnectKey
-            };
-            return View("Test", model);
-        }
-
-        public async Task<IActionResult> SelfTest()
-        {
-            string testAppId = "4a4176a8263f025134315e0de4b50378";
-            string testAppSecret = "6d96f5d14e25007f6ff967121ea31c44";
-            var token = AppsContainer.AccessToken(testAppId, testAppSecret);
-            //Ensure app
-            var appLocal = await _dbContext.Apps.Include(t => t.Channels).SingleOrDefaultAsync(t => t.Id == testAppId);
-            if (appLocal == null)
-            {
-                appLocal = new StargateApp
-                {
-                    Id = testAppId,
-                    Channels = new List<Channel>()
-                };
-                _dbContext.Apps.Add(appLocal);
-            }
-            //Create channel and save to database
-            var newChannel = new Channel
-            {
-                Description = "Self Test Channel",
-                ConnectKey = StringOperation.RandomString(20)
-            };
-            appLocal.Channels.Add(newChannel);
-            await _dbContext.SaveChangesAsync();
-            //Add messages to memory
-            await Task.Factory.StartNew(async () =>
-            {
-                var random = new Random();
-                for (int i = 0; i < 1000; i++)
-                {
-                    //Create Message
-                    var message = new Message
-                    {
-                        Id = Startup.MessageIdCounter.GetUniqueNo,
-                        ChannelId = newChannel.Id,
-                        Content = DateTime.Now + StringOperation.RandomString(10)
-                    };
-                    StargateMemory.Messages.Add(message);
-                    await Task.Delay(10);
-                }
-            });
-            //Prepare view
-            var model = new ChannelAddressModel
-            {
-                Id = newChannel.Id,
-                Key = newChannel.ConnectKey
             };
             return View("Test", model);
         }
