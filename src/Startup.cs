@@ -40,7 +40,7 @@ namespace Aiursoft.Stargate
             services.AddSingleton<IHostedService, TimedCleaner>();
         }
 
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, StargateDbContext dbContext, DataCleaner cleaner)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, StargateDbContext dbContext)
         {
             if (env.IsDevelopment())
             {
