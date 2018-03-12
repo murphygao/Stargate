@@ -8,6 +8,7 @@ using Aiursoft.Stargate.Data;
 using Aiursoft.Stargate.Services;
 using Aiursoft.Pylon;
 using Aiursoft.Pylon.Services;
+using Microsoft.Extensions.Hosting;
 
 namespace Aiursoft.Stargate
 {
@@ -36,7 +37,7 @@ namespace Aiursoft.Stargate
                 options.UseSqlServer(Configuration.GetConnectionString("DatabaseConnection")));
             services.AddMvc();
             services.AddTransient<WebSocketPusher>();
-            services.AddTransient<DataCleaner>();
+            services.AddSingleton<IHostedService, TimedCleaner>();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, StargateDbContext dbContext, DataCleaner cleaner)

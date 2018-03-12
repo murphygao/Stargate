@@ -18,21 +18,17 @@ namespace Aiursoft.Stargate.Controllers
     {
         private StargateDbContext _dbContext;
         private IPusher<WebSocket> _pusher;
-        private DataCleaner _cleaner;
 
         public ListenController(StargateDbContext dbContext,
-            WebSocketPusher pusher,
-            DataCleaner cleaner)
+            WebSocketPusher pusher)
         {
             _dbContext = dbContext;
             _pusher = pusher;
-            _cleaner = cleaner;
         }
 
         [AiurForceWebSocket]
         public async Task<IActionResult> Channel(ChannelAddressModel model)
         {
-            await _cleaner.StartCleanerService();
             var lastReadTime = DateTime.Now;
             var channel = await _dbContext.Channels.FindAsync(model.Id);
             if (channel.ConnectKey != model.Key)

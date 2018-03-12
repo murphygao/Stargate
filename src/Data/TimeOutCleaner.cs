@@ -14,10 +14,10 @@ namespace Aiursoft.Stargate.Data
             try
             {
                 StargateMemory.Messages.RemoveAll(t => t.CreateTime < DateTime.Now - new TimeSpan(0, 1, 0));
-                _dbContext.Channels.RemoveRange(_dbContext.Channels.ToList().Where(t=>!t.IsAlive()));
+                _dbContext.Channels.RemoveRange(_dbContext.Channels.ToList().Where(t => !t.IsAlive()));
                 await _dbContext.SaveChangesAsync();
             }
-            catch(Exception)
+            catch (Exception)
             {
 
             }
