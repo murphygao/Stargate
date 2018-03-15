@@ -16,7 +16,7 @@ using System.Threading.Tasks;
 namespace Aiursoft.Stargate.Controllers
 {
     [AiurExceptionHandler]
-    public class MessageController : AiurController
+    public class MessageController : Controller
     {
         private StargateDbContext _dbContext;
         public MessageController(StargateDbContext dbContext)

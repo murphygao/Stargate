@@ -14,7 +14,7 @@ namespace Aiursoft.Stargate.Controllers
 {
     //[AiurRequireHttps]
     [AiurExceptionHandler]
-    public class ListenController : AiurController
+    public class ListenController : Controller
     {
         private StargateDbContext _dbContext;
         private IPusher<WebSocket> _pusher;

@@ -19,7 +19,7 @@ using Aiursoft.Pylon.Models.Stargate.ListenAddressModels;
 namespace Aiursoft.Stargate.Controllers
 {
     [AiurExceptionHandler]
-    public class ChannelController : AiurController
+    public class ChannelController : Controller
     {
         private StargateDbContext _dbContext;
         public ChannelController(StargateDbContext dbContext)
@@ -76,7 +76,7 @@ namespace Aiursoft.Stargate.Controllers
             }
             else
             {
-                return Protocal(ErrorType.Success, "Current Info.");
+                return this.Protocal(ErrorType.Success, "Current Info.");
             }
         }
 

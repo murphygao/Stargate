@@ -17,7 +17,7 @@ using Aiursoft.Pylon.Services;
 namespace Aiursoft.Stargate.Controllers
 {
     [AiurExceptionHandler]
-    public class HomeController : AiurController
+    public class HomeController : Controller
     {
         private StargateDbContext _dbContext;
         public HomeController(StargateDbContext dbContext)
