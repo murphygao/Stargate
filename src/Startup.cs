@@ -19,16 +19,10 @@ namespace Aiursoft.Stargate
         public static Random random { get; set; } = new Random();
 
         public IConfiguration Configuration { get; }
-        public bool IsDevelopment { get; set; }
 
         public Startup(IConfiguration configuration, IHostingEnvironment env)
         {
             Configuration = configuration;
-            IsDevelopment = env.IsDevelopment();
-            if (IsDevelopment)
-            {
-                Values.ForceRequestHttps = false;
-            }
         }
 
         public void ConfigureServices(IServiceCollection services)
@@ -46,6 +40,10 @@ namespace Aiursoft.Stargate
             {
                 app.UseDeveloperExceptionPage();
                 app.UseDatabaseErrorPage();
+            }
+            else
+            {
+                app.UseEnforceHttps();
             }
             app.UseWebSockets();
             app.UseStaticFiles();

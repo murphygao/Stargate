@@ -16,7 +16,6 @@ using Aiursoft.Pylon.Services;
 
 namespace Aiursoft.Stargate.Controllers
 {
-    [AiurRequireHttps]
     [AiurExceptionHandler]
     public class HomeController : AiurController
     {

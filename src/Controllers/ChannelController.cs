@@ -18,7 +18,6 @@ using Aiursoft.Pylon.Models.Stargate.ListenAddressModels;
 
 namespace Aiursoft.Stargate.Controllers
 {
-    [AiurRequireHttps]
     [AiurExceptionHandler]
     public class ChannelController : AiurController
     {
