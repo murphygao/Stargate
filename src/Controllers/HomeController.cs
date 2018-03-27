@@ -20,9 +20,13 @@ namespace Aiursoft.Stargate.Controllers
     public class HomeController : Controller
     {
         private StargateDbContext _dbContext;
-        public HomeController(StargateDbContext dbContext)
+        private Debugger _debugger;
+        public HomeController(
+            StargateDbContext dbContext,
+            Debugger debugger)
         {
-            this._dbContext = dbContext;
+            _dbContext = dbContext;
+            _debugger = debugger;
         }
         public IActionResult Index()
         {
@@ -39,7 +43,7 @@ namespace Aiursoft.Stargate.Controllers
             var result = await ChannelService.CreateChannelAsync(await token(), "Test Channel");
             await Task.Factory.StartNew(async () =>
             {
-                await Debugger.SendDebuggingMessages(await token(), result.ChannelId);
+                await _debugger.SendDebuggingMessages(await token(), result.ChannelId);
             });
             var model = new ChannelAddressModel
             {

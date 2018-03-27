@@ -9,14 +9,19 @@ using System.Threading.Tasks;
 
 namespace Aiursoft.Stargate.Services
 {
-    public static class Debugger
+    public class Debugger
     {
-        public static async Task SendDebuggingMessages(string AccessToken, int ChannelId)
+        private readonly PushMessageService _messageService;
+        public Debugger(PushMessageService messageService)
+        {
+            _messageService = messageService;
+        }
+        public async Task SendDebuggingMessages(string AccessToken, int ChannelId)
         {
             var random = new Random();
             for (int i = 0; i < 1000; i++)
             {
-                await MessageService.PushMessageAsync(AccessToken, ChannelId, DateTime.Now + StringOperation.RandomString(10));
+                await _messageService.PushMessageAsync(AccessToken, ChannelId, DateTime.Now + StringOperation.RandomString(10));
                 await Task.Delay(10);
             }
         }
