@@ -48,6 +48,7 @@ namespace Aiursoft.Stargate
             else
             {
                 app.UseEnforceHttps();
+                app.UseExceptionHandler("/Home/Error");
             }
             app.UseWebSockets();
             app.UseStaticFiles();

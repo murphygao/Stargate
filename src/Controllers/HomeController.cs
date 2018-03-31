@@ -57,5 +57,9 @@ namespace Aiursoft.Stargate.Controllers
         {
             return View("Test", model);
         }
+        public IActionResult Error()
+        {
+            return this.Protocal(ErrorType.UnknownError, "Stargate server crashed! Please tell us!");
+        }
     }
 }
