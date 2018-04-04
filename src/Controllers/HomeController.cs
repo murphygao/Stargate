@@ -16,7 +16,8 @@ using Aiursoft.Pylon.Services;
 
 namespace Aiursoft.Stargate.Controllers
 {
-    [AiurExceptionHandler]
+    [APIExpHandler]
+    [APIModelStateChecker]
     public class HomeController : Controller
     {
         private StargateDbContext _dbContext;

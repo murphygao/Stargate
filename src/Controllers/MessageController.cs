@@ -15,7 +15,8 @@ using System.Threading.Tasks;
 
 namespace Aiursoft.Stargate.Controllers
 {
-    [AiurExceptionHandler]
+    [APIExpHandler]
+    [APIModelStateChecker]
     public class MessageController : Controller
     {
         private StargateDbContext _dbContext;

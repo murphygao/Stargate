@@ -18,7 +18,8 @@ using Aiursoft.Pylon.Models.Stargate.ListenAddressModels;
 
 namespace Aiursoft.Stargate.Controllers
 {
-    [AiurExceptionHandler]
+    [APIExpHandler]
+    [APIModelStateChecker]
     public class ChannelController : Controller
     {
         private StargateDbContext _dbContext;

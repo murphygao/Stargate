@@ -17,7 +17,7 @@ namespace Aiursoft.Stargate
     {
         public static Counter MessageIdCounter { get; set; } = new Counter();
         public static Counter ListenerIdCounter { get; set; } = new Counter();
-        public static Random random { get; set; } = new Random();
+        public static Random RandomObject { get; set; } = new Random();
 
         public IConfiguration Configuration { get; }
 
