@@ -1,4 +1,5 @@
 ﻿using Aiursoft.Stargate.Data;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using System;
@@ -13,26 +14,39 @@ namespace Aiursoft.Stargate.Services
     {
         private readonly ILogger _logger;
         private Timer _timer;
-        private StargateDbContext _dbContext;
+        private IServiceScopeFactory _scopeFactory;
 
         public TimedCleaner(
             ILogger<TimedCleaner> logger,
-            StargateDbContext dbContext)
+            IServiceScopeFactory scopeFactory)
         {
             _logger = logger;
-            _dbContext = dbContext;
+            _scopeFactory = scopeFactory;
         }
 
         public Task StartAsync(CancellationToken cancellationToken)
         {
             _logger.LogInformation("Timed Background Service is starting.");
-            _timer = new Timer(DoWork, null, TimeSpan.Zero, TimeSpan.FromMinutes(10));
+            _timer = new Timer(DoWork, null, TimeSpan.FromSeconds(3), TimeSpan.FromMinutes(10));
             return Task.CompletedTask;
         }
 
         private async void DoWork(object state)
         {
-            await TimeoutCleaner.AllClean(_dbContext);
+            try
+            {
+                _logger.LogInformation("Cleaner task started!");
+                using (var scope = _scopeFactory.CreateScope())
+                {
+                    var dbContext = scope.ServiceProvider.GetRequiredService<StargateDbContext>();
+                    await TimeoutCleaner.AllClean(dbContext);
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "An error occurred.");
+            }
+
         }
 
         public Task StopAsync(CancellationToken cancellationToken)

@@ -21,7 +21,7 @@ namespace Aiursoft.Stargate
 
         public IConfiguration Configuration { get; }
 
-        public Startup(IConfiguration configuration, IHostingEnvironment env)
+        public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
         }
@@ -38,7 +38,7 @@ namespace Aiursoft.Stargate
             services.AddSingleton<IHostedService, TimedCleaner>();
         }
 
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, StargateDbContext dbContext)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             if (env.IsDevelopment())
             {

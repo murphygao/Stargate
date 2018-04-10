@@ -14,7 +14,6 @@ namespace Aiursoft.Stargate
         {
             var host = WebHost.CreateDefaultBuilder(args)
                  .UseStartup<Startup>()
-                 .UseUrls("http://*:5006")
                  .Build();
 
             return host;
